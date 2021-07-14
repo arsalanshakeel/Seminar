@@ -52,10 +52,8 @@ plt.show()
 kw = np.kaiser(l,8)
 
 # ideal lowpass, passband = 1/8 pi
-#filt[0] = np.sin(fc*(n-nd))/(np.pi*(n-nd))
 ideal_lp = np.sin(wc*(n-(l-1)/2))/(np.pi*(n-(l-1)/2))
 # ideal highpass, passband = 1/8 pi
-#ideal_hp = ideal_lp*kw*np.cos(np.pi * n)
 ideal_hp = np.sin(np.pi*(n-(l-1)/2))/(np.pi*(n-(l-1)/2))-np.sin(0.875*np.pi*(n-(l-1)/2))/(np.pi*(n-(l-1)/2))
 # ideal bandpass, passband = 1/16 pi
 ideal_bp = np.sin((wc/2)*(n-(l-1)/2))/(np.pi*(n-(l-1)/2)) 
